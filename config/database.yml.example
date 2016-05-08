@@ -1,0 +1,20 @@
+
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password: password
+  socket: /var/run/mysqld/mysqld.sock
+
+development:
+  <<: *default
+  database: deploy_test_development
+test:
+  <<: *default
+  database: deploy_test_test
+production:
+  <<: *default
+  database: deploy_test_production
+  username: deploy_test
+  password: <%= ENV['DEPLOY_TEST_DATABASE_PASSWORD'] %>
