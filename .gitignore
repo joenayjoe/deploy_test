@@ -17,3 +17,6 @@
 
 #Ignore secrets.yml
 /config/secrets.yml
+
+#Ignore .idea files
+.idea/
