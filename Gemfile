@@ -21,9 +21,10 @@ gem 'i18n', '0.7.0'
 # Use Capistrano for deployment
 group :development do
   gem 'capistrano'
-  gem 'capistrano-bundler'
+  gem 'capistrano-bundler' # this will precompile asset, run migration. need to require asset and migraion in Capfile
   gem 'capistrano-rails'
   gem 'capistrano-rvm', github: "capistrano/rvm"
+  gem 'capistrano-passenger' # this will restart passenger, need to require passenger in Capfile
 end
 
 group :development, :test do
